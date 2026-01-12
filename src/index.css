@@ -1,56 +1,85 @@
 @import "tailwindcss";
 
-
-@keyframes fade-in {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+:root {
+  --primary: #3b82f6;
+  --secondary: #8b5cf6;
 }
 
-.animate-fade-in {
-  animation: fade-in 0.8s ease-out;
-}
-
-.animate-pulse-slow {
-  animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
-}
-
-/* Custom scrollbar */
-::-webkit-scrollbar {
-  width: 8px;
-}
-
-::-webkit-scrollbar-track {
-  background: #f1f1f1;
-}
-
-::-webkit-scrollbar-thumb {
-  background: #888;
-  border-radius: 4px;
-}
-
-::-webkit-scrollbar-thumb:hover {
-  background: #555;
-}
-
-/* Mobile optimizations */
-@media (max-width: 640px) {
-  .text-4xl {
-    font-size: 2rem;
-  }
+@theme {
+  --font-sans: "Inter", system-ui, -apple-system, sans-serif;
+  --text-lg: clamp(1rem, 0.875rem + 0.5vw, 1.125rem);
+  --text-xl: clamp(1.125rem, 1rem + 0.5vw, 1.25rem);
+  --text-2xl: clamp(1.25rem, 1rem + 1vw, 1.5rem);
+  --text-3xl: clamp(1.5rem, 1.125rem + 1.5vw, 2rem);
+  --text-4xl: clamp(2rem, 1.5rem + 2vw, 2.5rem);
+  --text-5xl: clamp(2.5rem, 2rem + 2.5vw, 3.5rem);
   
-  .text-6xl {
-    font-size: 2.5rem;
-  }
+  /* Dark mode colors */
+  --color-dark-bg: #0f172a;
+  --color-dark-surface: #1e293b;
+  --color-dark-text: #f1f5f9;
+  --color-dark-muted: #94a3b8;
 }
 
-/* Improve tap targets on mobile */
-button,
-a {
-  @apply touch-manipulation;
+@variant dark (&:is(.dark *));
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-sans);
+  overflow-x: hidden;
+  transition: background-color 0.3s ease;
+}
+
+/* Floating animation */
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-20px); }
+}
+
+.floating {
+  animation: float 3s ease-in-out infinite;
+}
+
+/* Blob animation */
+@keyframes blob {
+  0%, 100% { border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%; }
+  50% { border-radius: 30% 60% 70% 40% / 50% 60% 30% 60%; }
+}
+
+.animate-blob {
+  animation: blob 7s infinite;
+}
+
+/* Pulse animation */
+@keyframes pulse-slow {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
+}
+
+.pulse-slow {
+  animation: pulse-slow 3s infinite;
+}
+
+/* Dark mode */
+.dark .dark\:bg-dark-bg {
+  background-color: var(--color-dark-bg);
+}
+
+.dark .dark\:bg-dark-surface {
+  background-color: var(--color-dark-surface);
+}
+
+.dark .dark\:text-dark-text {
+  color: var(--color-dark-text);
+}
+
+.dark .dark\:text-dark-muted {
+  color: var(--color-dark-muted);
+}
+
+.dark .dark\:border-dark-surface {
+  border-color: #374151;
 }

@@ -1,189 +1,165 @@
-// App.jsx
-import React, { useState, useEffect } from "react";
-import {Header} from "./components/Header";
-import {Hero} from "./components/Hero";
-import {Products} from "./components/Products";
-import {Categories} from "./components/Categories";
-import {ProductModal} from "./components/ProductModal";
-import { AboutUs } from "./components/AboutUs";
-import { Contact } from "./components/Contact";
-import {Footer } from "./components/Footer";
-import { FloatingWhatsAppButton } from "./components/FloatingWhatsAppButton";
+import { motion } from "framer-motion";
+import { useEffect, useState } from "react";
+import Navbar from "./components/Navbar";
+import Hero from "./sections/Hero";
+import About from "./sections/About";
+import Skills from "./sections/Skills";
+import Projects from "./sections/Projects";
+import Contact from "./sections/Contact";
+import { FaGithub, FaLinkedin, FaTiktok } from "react-icons/fa";
 
-const PRODUCTS_DATA = [
-  {
-    id: 1,
-    name: "Classic Denim Jacket",
-    category: "jackets",
-    price: "₦15,000",
-    description: "Premium quality denim jacket with modern fit",
-    image:
-      "https://images.unsplash.com/photo-1551028719-00167b16eac5?w=400&h=400&fit=crop&crop=center",
-  },
-  {
-    id: 2,
-    name: "Floral Summer Dress",
-    category: "dresses",
-    price: "₦12,500",
-    description: "Lightweight floral print dress perfect for summer",
-    image:
-      "https://images.unsplash.com/photo-1567095761054-7a02e69e5c43?w-400&h=500&fit=crop&crop=center",
-  },
-  {
-    id: 3,
-    name: "Premium Cotton T-Shirt",
-    category: "shirts",
-    price: "₦4,500",
-    description: "100% cotton basic tee in multiple colors",
-    image:
-      "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?w=400&h=400&fit=crop&crop=center",
-  },
-  {
-    id: 4,
-    name: "Casual Sneakers",
-    category: "shoes",
-    price: "₦18,000",
-    description: "Comfortable everyday sneakers",
-    image:
-      "https://images.unsplash.com/photo-1549298916-b41d501d3772?w=400&h=400&fit=crop&crop=center",
-  },
-  {
-    id: 5,
-    name: "Silk Evening Gown",
-    category: "dresses",
-    price: "₦25,000",
-    description: "Elegant silk gown for special occasions",
-    image:
-      "https://images.unsplash.com/photo-1595777457583-95e059d581b8?w=400&h=500&fit=crop&crop=center",
-  },
-  {
-    id: 6,
-    name: "Oversized Hoodie",
-    category: "jackets",
-    price: "₦9,500",
-    description: "Cozy oversized hoodie with front pocket",
-    image:
-      "https://images.unsplash.com/photo-1556821840-3a63f95609a7?w=400&h=400&fit=crop&crop=center",
-  },
-  {
-    id: 7,
-    name: "Formal Leather Shoes",
-    category: "shoes",
-    price: "₦22,000",
-    description: "Premium leather formal shoes",
-    image:
-      "https://images.unsplash.com/photo-1611591437281-460bfbe1220a?w=400&h=400&fit=crop&crop=center",
-  },
-  {
-    id: 8,
-    name: "Casual Button-Down Shirt",
-    category: "shirts",
-    price: "₦8,500",
-    description: "Versatile button-down shirt",
-    image:
-      "https://images.unsplash.com/photo-1596755094514-f87e34085b2c?w=400&h=400&fit=crop&crop=center",
-  },
-];
+const App = () => {
+  const socialLinks = [
+    { icon: FaGithub, href: "https://github.com/olamoyegunabdulsalam", label: "GitHub" },
+    { icon: FaLinkedin, href: "https://www.linkedin.com/in/abdulsalam-olamoyegun-718007371/", label: "LinkedIn" },
+    { icon: FaTiktok, href: "https://www.tiktok.com/@codewithabdulsalam", label: "Tiktok" },
+  ];
 
-const CATEGORIES = [
-  { id: "all", name: "All Items" },
-  { id: "dresses", name: "Dresses" },
-  { id: "shirts", name: "Shirts" },
-  { id: "jackets", name: "Jackets" },
-  { id: "shoes", name: "Shoes" },
-];
+  const currentYear = new Date().getFullYear();
 
-function App() {
-  const [products, setProducts] = useState(PRODUCTS_DATA);
-  const [filteredProducts, setFilteredProducts] = useState(PRODUCTS_DATA);
-  const [selectedCategory, setSelectedCategory] = useState("all");
-  const [searchTerm, setSearchTerm] = useState("");
-  const [selectedProduct, setSelectedProduct] = useState(null);
-  const [isModalOpen, setIsModalOpen] = useState(false);
-
-  // Filter products based on category and search term
-  useEffect(() => {
-    let filtered = PRODUCTS_DATA;
-
-    // Filter by category
-    if (selectedCategory !== "all") {
-      filtered = filtered.filter(
-        (product) => product.category === selectedCategory
-      );
-    }
-
-    // Filter by search term
-    if (searchTerm.trim() !== "") {
-      filtered = filtered.filter(
-        (product) =>
-          product.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
-          product.description.toLowerCase().includes(searchTerm.toLowerCase())
-      );
-    }
-
-    setFilteredProducts(filtered);
-  }, [selectedCategory, searchTerm]);
-
-  const handleProductClick = (product) => {
-    setSelectedProduct(product);
-    setIsModalOpen(true);
-    document.body.style.overflow = "hidden";
-  };
-
-  const closeModal = () => {
-    setIsModalOpen(false);
-    setSelectedProduct(null);
-    document.body.style.overflow = "auto";
-  };
-
-  const handleWhatsAppClick = (product = null) => {
-    const phoneNumber = "234XXXXXXXXXX";
-    let message = "Hello, I'm interested in your fashion items!";
-
-    if (product) {
-      message = `Hello, I'm interested in the ${product.name}. Is it still available?`;
-    }
-
-    const encodedMessage = encodeURIComponent(message);
-    window.open(
-      `https://wa.me/${phoneNumber}?text=${encodedMessage}`,
-      "_blank"
-    );
-  };
+  // Floating particles (keep these if you want, or remove them too)
+  const particles = Array.from({ length: 15 }).map((_, i) => ({
+    id: i,
+    x: Math.random() * 100,
+    y: Math.random() * 100,
+    size: Math.random() * 3 + 1,
+    duration: Math.random() * 10 + 5,
+    delay: Math.random() * 5,
+  }));
 
   return (
-    <div className="min-h-screen bg-gray-50">
-      <Header onWhatsAppClick={() => handleWhatsAppClick()} />
-      <Hero onWhatsAppClick={() => handleWhatsAppClick()} />
+    <div className="min-h-screen bg-white dark:bg-dark-bg transition-colors duration-300 overflow-hidden">
+      {/* Floating particles (optional - remove if you don't want these either) */}
+      {particles.map((particle) => (
+        <motion.div
+          key={particle.id}
+          className="absolute w-1 h-1 bg-blue-500/20 dark:bg-blue-400/20 rounded-full"
+          style={{ left: `${particle.x}vw`, top: `${particle.y}vh` }}
+          animate={{
+            y: [0, -100, 0],
+            x: [0, Math.random() * 20 - 10, 0],
+            opacity: [0.3, 0.8, 0.3],
+          }}
+          transition={{
+            duration: particle.duration,
+            repeat: Infinity,
+            delay: particle.delay,
+            ease: "linear",
+          }}
+        />
+      ))}
 
-      <Categories
-        categories={CATEGORIES}
-        selectedCategory={selectedCategory}
-        onSelectCategory={setSelectedCategory}
-        searchTerm={searchTerm}
-        onSearchChange={setSearchTerm}
-      />
+      <Navbar />
+      <Hero />
+      <About />
+      <Skills />
+      <Projects />
+      <Contact />
 
-      <Products
-        products={filteredProducts}
-        onProductClick={handleProductClick}
-        onWhatsAppClick={handleWhatsAppClick}
-      />
+      {/* Footer */}
+      <footer className="bg-gray-900 dark:bg-gray-950 text-white py-12 relative overflow-hidden">
+        {/* Animated gradient border */}
+        <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600" />
 
-      <ProductModal
-        isOpen={isModalOpen}
-        product={selectedProduct}
-        onClose={closeModal}
-        onWhatsAppClick={handleWhatsAppClick}
-      />
+        <div className="container mx-auto px-4 md:px-6 lg:px-8 relative z-10">
+          <motion.div
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="max-w-6xl mx-auto"
+          >
+            <div className="flex flex-col md:flex-row justify-between items-center gap-8 mb-8">
+              <motion.div
+                whileHover={{ scale: 1.05 }}
+                className="text-center md:text-left"
+              >
+                <h3 className="text-2xl font-bold mb-2 bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
+                  Olamoyegun Abdulsalam
+                </h3>
+                <p className="text-gray-400">
+                  Frontend Developer & UI/UX Specialist
+                </p>
+              </motion.div>
 
-      <AboutUs onWhatsAppClick={handleWhatsAppClick} />
-      <Contact onWhatsAppClick={handleWhatsAppClick} />
+              <motion.div
+                className="flex gap-6"
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
+                viewport={{ once: true }}
+              >
+                {socialLinks.map((social, index) => (
+                  <motion.a
+                    key={social.label}
+                    href={social.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    initial={{ scale: 0 }}
+                    whileInView={{ scale: 1 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: index * 0.1, type: "spring" }}
+                    whileHover={{
+                      scale: 1.3,
+                      y: -5,
+                      rotate: [0, 10, -10, 0],
+                      transition: { duration: 0.5 },
+                    }}
+                    whileTap={{ scale: 0.9 }}
+                    className="p-3 bg-gray-800 text-white rounded-full hover:bg-gray-700 transition-colors hover:shadow-lg relative group"
+                    aria-label={social.label}
+                  >
+                    <social.icon className="w-5 h-5" />
+                    {/* Glow effect */}
+                    <motion.div
+                      className="absolute inset-0 rounded-full bg-blue-500 opacity-0 group-hover:opacity-20 blur-md"
+                      animate={{ scale: [1, 1.5, 1] }}
+                      transition={{ duration: 2, repeat: Infinity }}
+                    />
+                  </motion.a>
+                ))}
+              </motion.div>
+            </div>
 
-      <Footer />
-      <FloatingWhatsAppButton onClick={() => handleWhatsAppClick()} />
+            <motion.div
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              viewport={{ once: true }}
+              className="border-t border-gray-800 pt-8 text-center text-gray-400"
+            >
+              <p>
+                &copy; {currentYear} Olamoyegun Abdulsalam. All rights reserved.
+              </p>
+              <motion.p
+                animate={{ opacity: [0.7, 1, 0.7] }}
+                transition={{ duration: 2, repeat: Infinity }}
+                className="mt-2 text-sm"
+              >
+                Built with React, Tailwind CSS, and Framer Motion
+              </motion.p>
+
+              {/* Back to top button */}
+              <motion.a
+                href="#home"
+                className="inline-block mt-6 px-6 py-2 bg-gray-800 hover:bg-gray-700 rounded-full text-sm font-medium transition-colors group"
+                whileHover={{ y: -5 }}
+                whileTap={{ scale: 0.95 }}
+              >
+                <span className="flex items-center gap-2">
+                  Back to top
+                  <motion.span
+                    animate={{ y: [0, 5, 0] }}
+                    transition={{ duration: 2, repeat: Infinity }}
+                    className="text-lg"
+                  >
+                    ↑
+                  </motion.span>
+                </span>
+              </motion.a>
+            </motion.div>
+          </motion.div>
+        </div>
+      </footer>
     </div>
   );
-}
+};
 
 export default App;
