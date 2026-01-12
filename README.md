@@ -1,48 +1,20 @@
+<<<<<<< HEAD
+# StyleHub
+=======
+# React + Vite
 
+This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
-Welcome to my personal portfolio!  
-This is where I showcase my projects, skills, and journey as a **Frontend Developer**.
+Currently, two official plugins are available:
 
----
+- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
+- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
 
-## 🚀 About Me
-- 🎓 Computer Science student at **Koladaisi University**  
-- 💻 Frontend Developer skilled in **HTML, CSS, JavaScript, and Bootstrap**    
-- 🔥 Passionate about building **responsive and user-friendly websites**  
+## React Compiler
 
----
+The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
 
-## 🛠️ Tech Stack
-- **Frontend:** HTML5, CSS3, JavaScript (ES6+), Bootstrap 5  
-- **Version Control:** Git & GitHub  
-- **Other Skills:** Responsive Web Design, Debugging, Cross-Browser Compatibility  
+## Expanding the ESLint configuration
 
----
-
-## 📂 Featured Projects
-### 🚗 Car Rental Website
-- Responsive car rental platform with filtering & booking features.  
-- Built with **HTML, CSS, JavaScript, and Bootstrap**.  
-- [Live Demo](https://github.com/olamoyegunabdulsalam/Fastride-Car-Rental-Service) | [Source Code](https://olamoyegunabdulsalam.github.io/Fastride-Car-Rental-Service/)
-
-### 🏥 Hospital Website
-- Modern hospital landing page with service, doctors, and contact sections.  
-- Focused on clean UI and accessibility.  
-- [Live Demo](https://olamoyegunabdulsalam.github.io/Careline-Hospital-/) | [Source Code](https://github.com/olamoyegunabdulsalam/Careline-Hospital-)
-
-### 👕 Chase World (Fashion Brand)
-- Premium landing page for a fashion brand using **Bootstrap 5**.  
-- Smooth navigation + responsive design.  
-- [Live Demo](https://chase-world-cap-store.vercel.app/) | [Source Code](https://github.com/olamoyegunabdulsalam/chase-world-cap-store)
-
----
-
-## 📬 Contact
-- 📧 Email: olamoyegunabdulsalam59@gmail.com  
-- 🔗 [LinkedIn](https://www.linkedin.com/in/abdul-salam-618750372)
-- 🐦 [X](https://x.com/Abdulsalam26520)  
-- 📸 [Instagram](https://www.instagram.com/olamoyegunabdulsalam/)   
-
----
-
-⭐ If you like my work, feel free to connect and check out my other projects!
+If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+>>>>>>> 661c8b0 (Initial commit)
