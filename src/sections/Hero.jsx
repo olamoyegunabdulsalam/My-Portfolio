@@ -54,7 +54,7 @@ const Hero = () => {
             >
               <div className="w-40 h-40 md:w-48 md:h-48 mx-auto bg-gradient-to-r from-blue-500 to-purple-500 rounded-full flex items-center justify-center animate-blob overflow-hidden shadow-2xl">
                 <div className="w-36 h-36 md:w-44 md:h-44 bg-gradient-to-br from-blue-400 to-purple-400 rounded-full flex items-center justify-center">
-                  <img src="/Img/Profile-pic.jpg" alt="Profile" />
+                  <img src="./Img/Profile-pic.jpg" alt="Profile" />
                 </div>
               </div>
               {/* Floating badges */}

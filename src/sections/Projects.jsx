@@ -14,7 +14,7 @@ const Projects = () => {
       description:
         "A responsive car rental website that allows users to browse available vehicles, view pricing details, and make rental inquiries. Built with a focus on clean UI, accessibility, and mobile-first responsiveness.",
       tech: ["HTML", "Bootstrap", "JavaScript"],
-      image: "/Img/Fastride-Autos.png",
+      image: "./Img/Fastride-Autos.png",
       liveUrl:
         "https://olamoyegunabdulsalam.github.io/Fastride-Car-Rental-Service/",
       githubUrl:
@@ -26,7 +26,7 @@ const Projects = () => {
       description:
         "An online learning platform interface built with React and Tailwind CSS, featuring course listings, structured layouts, and a modern dashboard-style design optimized for scalability.",
       tech: ["React", "Tailwind CSS", "JavaScript"],
-      image: "/Img/Learn-Hub.png",
+      image: "./Img/Learn-Hub.png",
       liveUrl: "https://olamoyegunabdulsalam.github.io/LearnHub/",
       githubUrl: "https://github.com/olamoyegunabdulsalam/LearnHub",
       category: ["react", "dashboard", "education"],
@@ -36,7 +36,7 @@ const Projects = () => {
       description:
         "A full e-commerce cosmetics platform with product listings, admin dashboard, and backend integration. Includes product management, responsive UI, and real-time data handling using Supabase.",
       tech: ["React", "Tailwind CSS", "Supabase"],
-      image: "/Img/MiMi-Luxe.png",
+      image: "./Img/MiMi-Luxe.png",
       liveUrl: "https://mimiluxe-cosmetics.vercel.app/",
       githubUrl: "https://github.com/olamoyegunabdulsalam/mimiluxe-cosmetics",
       category: ["react", "ecommerce", "fullstack"],
@@ -46,7 +46,7 @@ const Projects = () => {
       description:
         "A modern coaching and personal development website designed to clearly communicate services, build trust, and convert visitors through structured sections and call-to-action layouts.",
       tech: ["HTML", "CSS", "JavaScript"],
-      image: "/Img/Elevate.png",
+      image: "./Img/Elevate.png",
       liveUrl: "https://elevate-coaching-eosin.vercel.app/",
       githubUrl: "https://github.com/olamoyegunabdulsalam/Elevate-Coaching",
       category: ["frontend", "javascript", "branding"],
@@ -56,7 +56,7 @@ const Projects = () => {
       description:
         "A professional corporate website for an IT consulting brand, highlighting services, expertise, and contact information with a clean, minimal, and business-focused design.",
       tech: ["HTML", "CSS", "JavaScript"],
-      image: "/Img/IT-Consultant.png",
+      image: "./Img/IT-Consultant.png",
       liveUrl: "https://it-consultant-rho.vercel.app/",
       githubUrl: "https://github.com/olamoyegunabdulsalam/IT-Consultant",
       category: ["frontend", "javascript", "corporate"],
@@ -66,7 +66,7 @@ const Projects = () => {
       description:
         "A creative frontend project showcasing modern UI components, layouts, and design patterns. Built to demonstrate visual design skills, animations, and layout composition.",
       tech: ["HTML", "CSS", "JavaScript"],
-      image: "/Img/Design-Hub.png",
+      image: "./Img/Design-Hub.png",
       liveUrl: "https://design-hub-teal.vercel.app/",
       githubUrl: "https://github.com/olamoyegunabdulsalam/DesignHub",
       category: ["frontend", "javascript", "ui"],
