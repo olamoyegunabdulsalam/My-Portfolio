@@ -106,7 +106,11 @@ const Hero = () => {
               transition={{ delay: 0.4, duration: 0.8 }}
               className="text-2xl md:text-3xl text-gray-600 dark:text-gray-300 mb-8"
             >
+<<<<<<< HEAD
               Frontend Developer &{" "}
+=======
+              Full Stack Developer &{" "}
+>>>>>>> 99cf0dd (Initial commit)
               <motion.span
                 animate={{ scale: [1, 1.1, 1] }}
                 transition={{ duration: 2, repeat: Infinity }}
@@ -122,35 +126,61 @@ const Hero = () => {
               transition={{ delay: 0.6, duration: 0.8 }}
               className="text-lg md:text-xl text-gray-500 dark:text-gray-400 max-w-2xl mx-auto mb-12"
             >
+<<<<<<< HEAD
               I build{" "}
+=======
+              Helping
+>>>>>>> 99cf0dd (Initial commit)
               <motion.span
                 whileHover={{ scale: 1.1 }}
                 className="inline-block px-2 py-1 bg-gradient-to-r from-yellow-100 to-yellow-200 dark:from-yellow-900/30 dark:to-yellow-800/30 rounded-lg font-medium cursor-pointer"
               >
+<<<<<<< HEAD
                 exceptional
               </motion.span>{" "}
               digital experiences that are{" "}
+=======
+                startups
+              </motion.span>{" "}
+              and{" "}
+>>>>>>> 99cf0dd (Initial commit)
               <motion.span
                 whileHover={{ scale: 1.1 }}
                 className="inline-block px-2 py-1 bg-gradient-to-r from-green-100 to-green-200 dark:from-green-900/30 dark:to-green-800/30 rounded-lg font-medium cursor-pointer"
               >
+<<<<<<< HEAD
                 fast
               </motion.span>
               ,{" "}
+=======
+                businesses
+              </motion.span>
+>>>>>>> 99cf0dd (Initial commit)
               <motion.span
                 whileHover={{ scale: 1.1 }}
                 className="inline-block px-2 py-1 bg-gradient-to-r from-blue-100 to-blue-200 dark:from-blue-900/30 dark:to-blue-800/30 rounded-lg font-medium cursor-pointer"
               >
+<<<<<<< HEAD
                 accessible
               </motion.span>
               , and{" "}
+=======
+                turn ideas
+              </motion.span>
+>>>>>>> 99cf0dd (Initial commit)
               <motion.span
                 whileHover={{ scale: 1.1 }}
                 className="inline-block px-2 py-1 bg-gradient-to-r from-purple-100 to-purple-200 dark:from-purple-900/30 dark:to-purple-800/30 rounded-lg font-medium cursor-pointer"
               >
+<<<<<<< HEAD
                 visually appealing
               </motion.span>
               . Let's bring your ideas to life.
+=======
+                into modern,
+              </motion.span>
+              scalable web applications.
+>>>>>>> 99cf0dd (Initial commit)
             </motion.p>
 
             <motion.div

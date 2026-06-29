@@ -77,7 +77,11 @@ const App = () => {
                   Olamoyegun Abdulsalam
                 </h3>
                 <p className="text-gray-400">
+<<<<<<< HEAD
                   Frontend Developer & UI/UX Specialist
+=======
+                  Fullstack Developer & UI/UX Specialist
+>>>>>>> 99cf0dd (Initial commit)
                 </p>
               </motion.div>
 
