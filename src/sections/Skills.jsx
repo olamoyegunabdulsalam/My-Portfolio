@@ -8,13 +8,10 @@ import {
   SiTailwindcss,
   SiBootstrap,
   SiSupabase,
-<<<<<<< HEAD
-=======
   SiNodedotjs,
   SiPhp,
   SiMysql,
   SiGit,
->>>>>>> 99cf0dd (Initial commit)
 } from "react-icons/si";
 
 const Skills = () => {
@@ -64,11 +61,7 @@ const Skills = () => {
       name: "React",
       color: "text-cyan-500",
       bgColor: "bg-cyan-50 dark:bg-cyan-900/20",
-<<<<<<< HEAD
-      level: "Expert",
-=======
       level: "Advanced",
->>>>>>> 99cf0dd (Initial commit)
       description: "Hooks, Context API, Performance optimization",
       projects: "30+ projects",
     },
@@ -77,11 +70,7 @@ const Skills = () => {
       name: "Tailwind CSS",
       color: "text-teal-500",
       bgColor: "bg-teal-50 dark:bg-teal-900/20",
-<<<<<<< HEAD
-      level: "Expert",
-=======
       level: "Advanced",
->>>>>>> 99cf0dd (Initial commit)
       description: "Utility-first, responsive, custom configurations",
       projects: "25+ projects",
     },
@@ -99,12 +88,6 @@ const Skills = () => {
       name: "Supabase",
       color: "text-green-500",
       bgColor: "bg-green-50 dark:bg-green-900/20",
-<<<<<<< HEAD
-      level: "Intermediate",
-      description: "PostgreSQL database, authentication, real-time",
-      projects: "15+ projects",
-    },
-=======
       level: "Advanced",
       description:
         "Backend development, authentication, PostgreSQL, storage, real-time features and APIs",
@@ -128,7 +111,6 @@ const Skills = () => {
       description: "Version control, branching, collaboration workflows",
       projects: "50+ repositories",
     },
->>>>>>> 99cf0dd (Initial commit)
   ];
 
   return (

@@ -69,48 +69,30 @@ const About = () => {
                 whileHover={{ x: 10 }}
                 className="text-lg text-gray-600 dark:text-gray-300 p-4 bg-white dark:bg-dark-surface rounded-xl shadow-lg hover:shadow-xl transition-shadow"
               >
-<<<<<<< HEAD
-                I'm a passionate Frontend Developer with expertise in creating
-                modern, responsive web applications that deliver exceptional
-                user experiences.
-=======
                 I'm a Full Stack Web Developer passionate about building modern,
                 scalable web applications that combine intuitive user
                 experiences with reliable backend systems.
->>>>>>> 99cf0dd (Initial commit)
               </motion.p>
               <motion.p
                 whileHover={{ x: 10 }}
                 className="text-lg text-gray-600 dark:text-gray-300 p-4 bg-white dark:bg-dark-surface rounded-xl shadow-lg hover:shadow-xl transition-shadow"
               >
-<<<<<<< HEAD
-                My focus is on building clean, efficient code using React and
-                Tailwind CSS, with a strong emphasis on performance,
-                accessibility, and visual quality.
-=======
                 I specialize in React, JavaScript, Tailwind CSS, Node.js and
                 Supabase. I frequently use Supabase to build backend
                 functionality, including authentication, databases, real-time
                 features, and secure APIs, allowing me to develop complete
                 applications from frontend to backend.
->>>>>>> 99cf0dd (Initial commit)
               </motion.p>
               <motion.p
                 whileHover={{ x: 10 }}
                 className="text-lg text-gray-600 dark:text-gray-300 p-4 bg-white dark:bg-dark-surface rounded-xl shadow-lg hover:shadow-xl transition-shadow"
               >
-<<<<<<< HEAD
-                I believe in the power of simple, intuitive designs that solve
-                real problems. Every project is an opportunity to learn,
-                innovate, and deliver value.
-=======
                 I enjoy turning ideas into products that solve real-world
                 problems, whether it's a SaaS platform, business website,
                 productivity tool, or AI-powered application. I'm always
                 exploring new technologies and continuously improving my skills
                 to build faster, more secure, and more scalable software.
->>>>>>> 99cf0dd (Initial commit)
-              </motion.p>
+              </motion.p>.
 
               {/* Interactive skills chips */}
               <div className="flex flex-wrap gap-3 pt-6">
@@ -149,11 +131,7 @@ const About = () => {
 
                   <div className="space-y-6">
                     {[
-<<<<<<< HEAD
-                      { skill: "Frontend Development", level: 95 },
-=======
                       { skill: "Fullstack Development", level: 95 },
->>>>>>> 99cf0dd (Initial commit)
                       { skill: "UI/UX Design", level: 90 },
                       { skill: "Performance Optimization", level: 85 },
                       { skill: "Responsive Design", level: 95 },
